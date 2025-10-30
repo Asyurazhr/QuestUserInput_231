@@ -33,4 +33,7 @@ import org.tensorflow.lite.schema.Padding
 @Composable
 fun FormDataDiri(modifier: Modifier
 ){
-    v
+    var textNama by remember { mutableStateOf(value = "")}
+    var textAlamat by remember { mutableStateOf(value = "")}
+    var textJK by remember { mutableStateOf(value = "")}
+
