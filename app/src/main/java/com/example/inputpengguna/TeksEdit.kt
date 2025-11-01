@@ -138,11 +138,35 @@ fun FormDataDiri(modifier: Modifier
                         }
                     }
                 }
+                Text(
+                    text = "STATUS PERKAWINAN",
+                    modifier = Modifier.padding(all = 10.dp),
+                    fontWeight = FontWeight.Bold
+                )
+                Column() {
+                    status1.forEach { item ->
+                        Column(
+                            modifier = Modifier
+                                .selectable(
+                                    selected = textStatus == item,
+                                    onClick = { textStatus == item }
+                                )
+                        ) {
+                            Row() {
+                                RadioButton(
+                                    selected = textStatus == item,
+                                    onClick = { textStatus = item }
+                                )
+                                Text(
+                                    text = item,
+                                    modifier = Modifier.padding(top = 10.dp)
+                                )
+                            }
+                        }
+                    }
+                }
         }
-    Column(modifier = Modifier.padding(top = 50.dp),
-        verticalArrangement = Arrangement.Top,
-        horizontalAlignment = Alignment.CenterHorizontally) {
-        OutlinedTextField(
+     OutlinedTextField(
             value = textNama,
             singleLine = true,
             shape = MaterialTheme.shapes.large,
