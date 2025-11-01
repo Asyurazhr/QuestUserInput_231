@@ -171,16 +171,23 @@ fun FormDataDiri(modifier: Modifier
                     fontWeight = FontWeight.Bold
                 )
         }
-        OutlinedTextField(
-            value = textNama,
-            singleLine = true,
-            shape = MaterialTheme.shapes.large,
-            modifier = Modifier.width(width = 250.dp),
-            label = { Text(text = "Nama Lengkap") },
-            onValueChange = {
-                textNama = it
-            }
-        )
+            OutlinedTextField(
+                value = "",
+                onValueChange = {},
+                singleLine = true,
+                shape = MaterialTheme.shapes.large,
+                label = { Text(text = "Alamat Lengkap") },
+                modifier = Modifier.padding(10.dp)
+                    .fillMaxWidth(1f),
+                colors = OutlinedTextFieldDefaults.colors(
+                    focusedTextColor = Color.Black,
+                    unfocusedTextColor = Color.DarkGray,
+                    focusedContainerColor = Color.White,
+                    unfocusedContainerColor = Color.White,
+                    focusedBorderColor = Color.Blue,
+                    unfocusedBorderColor = Color.Gray,
+                )
+            )
         Row {
             gender.forEach { item ->
                 Row(
