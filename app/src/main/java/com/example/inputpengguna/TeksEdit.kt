@@ -110,6 +110,34 @@ fun FormDataDiri(modifier: Modifier
                         unfocusedBorderColor = Color.Gray,
                     )
                 )
+
+                Text(
+                    text = "JENIS KELAMIN",
+                    modifier = Modifier.padding(all = 10.dp),
+                    fontWeight = FontWeight.Bold
+                )
+                Column() {
+                    gender.forEach { item ->
+                        Column(
+                            modifier = Modifier
+                                .selectable(
+                                    selected = textJK == item,
+                                    onClick = { textJK == item }
+                                )
+                        ) {
+                            Row() {
+                                RadioButton(
+                                    selected = textJK == item,
+                                    onClick = { textJK = item }
+                                )
+                                Text(
+                                    text = item,
+                                    modifier = Modifier.padding(top = 10.dp)
+                                )
+                            }
+                        }
+                    }
+                }
         }
     Column(modifier = Modifier.padding(top = 50.dp),
         verticalArrangement = Arrangement.Top,
