@@ -165,8 +165,13 @@ fun FormDataDiri(modifier: Modifier
                         }
                     }
                 }
+                Text(
+                    text = "ALAMAT LENGKAP",
+                    modifier = Modifier.padding(all = 10.dp),
+                    fontWeight = FontWeight.Bold
+                )
         }
-     OutlinedTextField(
+        OutlinedTextField(
             value = textNama,
             singleLine = true,
             shape = MaterialTheme.shapes.large,
