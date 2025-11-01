@@ -235,17 +235,18 @@ fun FormDataDiri(modifier: Modifier
                 color = Color.DarkGray
             )
 
-        Button(
-            modifier = Modifier.fillMaxWidth(fraction = 1f),
-            enabled = textAlamat.isNotEmpty(),
-            onClick = {
-                nama=textNama
-                jenis=textJK
-                alamat=textAlamat
+            Button(
+                modifier = Modifier.fillMaxWidth(fraction = 1f),
+                enabled = textAlamat.isNotEmpty(),
+                onClick = {
+                    nama = textNama
+                    jenis = textJK
+                    alamat = textAlamat
+                }
+            ) {
+                Text(text = stringResource(id = R.string.submit))
             }
-        ){
-            Text(text = stringResource(id = R.string.submit))
-        }
+
 
         HorizontalDivider(
             modifier = Modifier.padding(bottom = dimensionResource(R.dimen.padding_medium), top = dimensionResource(
