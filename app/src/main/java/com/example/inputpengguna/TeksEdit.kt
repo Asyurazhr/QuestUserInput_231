@@ -188,20 +188,16 @@ fun FormDataDiri(modifier: Modifier
                     unfocusedBorderColor = Color.Gray,
                 )
             )
-        Row {
-            gender.forEach { item ->
-                Row(
-                    modifier = Modifier.selectable(
-                        selected = textJK == item,
-                        onClick = { textJK = item }
-                    ), verticalAlignment = Alignment.CenterVertically) {
-                    RadioButton(
-                        selected = textJK == item,
-                        onClick = {
-                            textJK = item
-                        })
-                    Text(text = item)
+            Button(
+                modifier = Modifier
+                    .fillMaxWidth(fraction = 1f)
+                    .padding(all = 10.dp),
+                onClick = {
+                    jenis = textJK
+                    status = textStatus
                 }
+            ) {
+                Text(text = stringResource(id = R.string.submit))
             }
         }
         OutlinedTextField(
